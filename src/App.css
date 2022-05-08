@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  /* solid colors  */
+  --solid-white: #ffffff;
+  --solid-red: #ff0000;
+  --solid-black: #000000;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--solid-white);
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+input,
+textarea {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto;
+}
+
+/* Homepage */
+
+.home-input {
+  outline: none;
+  border-bottom: 3px solid var(--solid-black);
+  color: inherit;
+  width: 30vw;
+  font-size: inherit;
+  text-align: center;
+  background-color: transparent;
+  margin-top: 5rem;
+}
+.time-container {
+  font-size: 10rem;
+  font-weight: 400;
+}
+.greeting {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 1.2rem 0;
+}
+.text-center {
+  text-align: center;
+}
+.today,
+.focus {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  font-weight: 700;
+}
+.focus-container {
+  display: flex;
+  align-items: baseline;
+}
+.focus-container > * {
+  margin-left: 1rem;
+}
+.btn-edit {
+  margin-left: 1rem;
+  color: var(--solid-black);
+  border-radius: 10px;
+  background-color: var(--solid-white);
+  padding: 4px 8px;
+}
+
+.weather-container {
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.quote-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+.temperature {
+  font-size: 2rem;
+}
+.location {
+  font-size: 1rem;
+  font-weight: 300;
+}
