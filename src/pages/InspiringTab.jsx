@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CurrentTime, Quote, Weather } from "../components";
+import { CurrentTimeGreet, Quote, Weather } from "../components";
 
 const InspiringTab = () => {
   const [userName, setUsername] = useState(null);
@@ -47,8 +47,8 @@ const InspiringTab = () => {
       </div>
 
       <div className="container">
-        <CurrentTime />
-        <h2 className="greeting">Good Morning, {userName}</h2>
+        <CurrentTimeGreet userName={userName} />
+
         {focus ? (
           <div className="text-center ">
             <p className="today">Today</p>
