@@ -20,7 +20,9 @@ const CurrentTimeGreet = ({ userName }) => {
   return (
     <div>
       <div className="time-container">{time && time.slice(0, 5)}</div>
-      <h2 className="greeting">Good Morning, {userName}</h2>
+      <h2 className="greeting">
+        Good {greet} , {userName}
+      </h2>
     </div>
   );
 };
