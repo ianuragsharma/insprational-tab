@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { CurrentTime, Quote, Weather } from "../components";
+import { CurrentTimeGreet, Quote, Weather } from "../components";
 
 const InspiringTab = () => {
   const [userName, setUsername] = useState(null);
   const [focus, setFocus] = useState(null);
 
   const [isChecked, setIsChecked] = useState(
-    localStorage.getItem("isChecked") &&
-      localStorage.getItem("isChecked") === "false"
-      ? false
-      : true
+    localStorage.getItem("isChecked")
+      ? localStorage.getItem("isChecked") === "false"
+        ? false
+        : true
+      : false
   );
-
   useEffect(() => {
     setUsername(localStorage.getItem("userName"));
     setFocus(localStorage.getItem("focus"));
-    localStorage.getItem("isChecked") &&
-    localStorage.getItem("isChecked") === "false"
-      ? setIsChecked(false)
-      : setIsChecked(true);
     window.addEventListener("keydown", focusHandler);
     return () => {
       window.removeEventListener("keydown", focusHandler);
@@ -51,17 +47,17 @@ const InspiringTab = () => {
       </div>
 
       <div className="container">
-        <CurrentTime />
-        <h2 className="greeting">Good Morning, {userName}</h2>
+        <CurrentTimeGreet userName={userName} />
+
         {focus ? (
           <div className="text-center ">
             <p className="today">Today</p>
             <div className="focus-container">
               <input
-                checked={isChecked}
+                defaultChecked={false}
                 type="checkbox"
-                disabled={false}
-                onChange={checkHandler}
+                checked={isChecked}
+                onClick={checkHandler}
               />
               <div className={`focus ${isChecked ? "text-strike" : ""}`}>
                 {focus}
