@@ -58,10 +58,14 @@ const InspiringTab = () => {
                 type="checkbox"
                 checked={isChecked}
                 onClick={checkHandler}
+                id="focus"
               />
-              <div className={`focus ${isChecked ? "text-strike" : ""}`}>
+              <label
+                htmlFor="focus"
+                className={`focus ${isChecked ? "text-strike" : ""}`}
+              >
                 {focus}
-              </div>
+              </label>
               <button className="btn-edit " onClick={editHandler}>
                 Edit
               </button>
